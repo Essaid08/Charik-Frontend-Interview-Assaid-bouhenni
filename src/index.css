@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adding custom CSS classes in Tailwind */
+
+@layer components {
+  /* Navigation list item styles */
+  .custom-li-nav {
+    @apply mr-10 py-2 cursor-pointer relative last:mr-6;
+  }
+
+  /* Anchor link styles for navigation */
+  .anchor-link-nav {
+    @apply py-[10.8px] text-[#222326] text-lg font-sans;
+  }
+
+  /* Mobile navigation list item styles */
+  .li-nav-mobile {
+    @apply border-gray-200 border-b-2 text-[#222326] font-thin px-6 py-2 flex flex-col justify-between cursor-pointer;
+  }
+
+  /* Image styles for feature cards */
+  .fct-img {
+    @apply w-[66px];
+  }
+
+  /* Heading styles for feature cards */
+  .fct-h4 {
+    @apply font-[20px] text-[#222326] mb-[10px] font-bold font-sans;
+  }
+
+  /* Paragraph styles for feature cards */
+  .custom-p {
+    @apply text-[18px] text-[#6A6D77] max-md:text-[16px];
+  }
+
+  /* Container for feature cards */
+  .fct-container {
+    @apply flex items-start gap-12 md:justify-between md:gap-4 px-3 w-full mr-auto;
+  }
+
+  /* Div within feature cards */
+  .fct-div {
+    @apply flex flex-col items-start justify-start pl-6 pr-12 mb-8;
+  }
+
+  /* Icon styles for feature cards */
+  .fct-icon {
+    @apply fct-img bg-[#F65954] rounded-[100%] flex items-center justify-center;
+  }
+
+  .fct-icon-green {
+    @apply fct-img bg-[#37B94C] rounded-[100%] flex items-center justify-center;
+    /* Similar to fct-icon, but with a different background color */
+  }
+
+  .fct-span {
+    @apply w-[66px] h-[66px] flex justify-center items-center;
+  }
+
+  /* Card styles */
+  .card-container {
+    @apply flex flex-col shrink items-center justify-center border-2 cursor-pointer overflow-hidden border-gray-50 rounded-3xl hover:scale-105 md:max-w-[370px] md:max-h-[690px];
+  }
+
+  .details-div {
+    @apply flex flex-col justify-center items-start px-6 py-6 bg-white;
+    /* Flex layout, padding, background color */
+  }
+
+  .card-span {
+    @apply text-[16px] px-2 p-[2px] text-white bg-[#F65954] rounded-lg mt-4;
+  }
+
+  .card-h4 {
+    @apply text-[22px] font-semibold mt-4;
+  }
+
+  .card-p {
+    @apply text-[15px] text-[#6A6D77] mt-4;
+  }
+
+  /* Pseudo-element styles for custom list items */
+  .custom-li-nav::before {
+    content: "";
+    position: absolute;
+    top: 540px;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: transparent;
+    transition: width 0.3s ease, left 0.3s ease;
+    /* Creates a pseudo-element for a dynamic underline effect */
+  }
+
+  .custom-li-nav:hover::before {
+    width: 100%;
+    left: 0;
+    background-color: #ef4444;
+    /* Expands the pseudo-element underline on hover */
+  }
+}
